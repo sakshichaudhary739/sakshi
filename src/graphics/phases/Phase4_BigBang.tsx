@@ -36,7 +36,7 @@ function ExplosionParticles({ phaseProgress }: { phaseProgress: number }) {
     const pos = ref.current.geometry.attributes.position.array as Float32Array
     for (let i = 0; i < count; i++) {
       const spread = phaseProgress * 18
-      pos[i * 3]     = velocities[i * 3] * spread
+      pos[i * 3] = velocities[i * 3] * spread
       pos[i * 3 + 1] = velocities[i * 3 + 1] * spread
       pos[i * 3 + 2] = velocities[i * 3 + 2] * spread
     }
@@ -70,8 +70,8 @@ export function Phase4_BigBang({ phaseProgress }: { phaseProgress: number }) {
     <group position={[0, 0, -30]}>
       {/* Singularity core — intense glow */}
       <pointLight position={[0, 0, 0]} intensity={15 + phaseProgress * 80} color="#FFFFFF" distance={35} />
-      <pointLight position={[0, 0, 0]} intensity={8  + phaseProgress * 30} color="#06B6D4" distance={60} />
-      <pointLight position={[0, 0, 0]} intensity={5  + phaseProgress * 20} color="#FCD34D" distance={50} />
+      <pointLight position={[0, 0, 0]} intensity={8 + phaseProgress * 30} color="#06B6D4" distance={60} />
+      <pointLight position={[0, 0, 0]} intensity={5 + phaseProgress * 20} color="#FCD34D" distance={50} />
 
       {/* Singularity point */}
       <mesh>
@@ -83,8 +83,8 @@ export function Phase4_BigBang({ phaseProgress }: { phaseProgress: number }) {
       <ExplosionParticles phaseProgress={phaseProgress} />
 
       {/* Three layered shockwave rings */}
-      <ShockwaveRing phaseProgress={phaseProgress} color="#06B6D4" tilt={0}    />
-      <ShockwaveRing phaseProgress={phaseProgress} color="#A78BFA" tilt={0.5}  />
+      <ShockwaveRing phaseProgress={phaseProgress} color="#06B6D4" tilt={0} />
+      <ShockwaveRing phaseProgress={phaseProgress} color="#A78BFA" tilt={0.5} />
       <ShockwaveRing phaseProgress={phaseProgress} color="#FCD34D" tilt={-0.4} />
     </group>
   )

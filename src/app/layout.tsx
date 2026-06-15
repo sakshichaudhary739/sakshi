@@ -10,6 +10,8 @@ export const metadata: Metadata = {
   description: "Advanced, futuristic, premium enterprise-grade Career Operating System.",
 };
 
+import { AudioPlayer } from "@/components/AudioPlayer";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -25,6 +27,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {children}
+          <AudioPlayer />
         </ThemeProvider>
       </body>
     </html>
