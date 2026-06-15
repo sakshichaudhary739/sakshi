@@ -50,17 +50,17 @@ function LoopCGPACounter({ target = 9.76 }) {
 export function Education() {
   const [isHovered, setIsHovered] = useState(false)
 
-  const stopColor = isHovered ? 'rgba(125, 211, 252, 0.9)' : 'rgba(255, 255, 255, 0.35)'
-  const stopColorEdge = isHovered ? 'rgba(125, 211, 252, 0)' : 'rgba(255, 255, 255, 0)'
+  const stopColor = isHovered ? 'rgba(255, 105, 180, 0.9)' : 'rgba(255, 255, 255, 0.35)'
+  const stopColorEdge = isHovered ? 'rgba(255, 105, 180, 0)' : 'rgba(255, 255, 255, 0)'
 
   return (
     <section className="w-full py-20">
       {/* Section heading — Zoom in & blur reveal */}
       <motion.div
-        initial={{ opacity: 0, scale: 0.9, filter: 'blur(6px)' }}
+        initial={{ opacity: 0, scale: 0.9, filter: 'blur(24px)' }}
         whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
         viewport={{ once: true, margin: '-100px' }}
-        transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
         className="mb-16 flex flex-col items-center text-center"
       >
         <h2
@@ -71,7 +71,7 @@ export function Education() {
             animation: 'shimmer 8s linear infinite',
           }}
         >
-          Education
+          Foundations of Knowledge
         </h2>
         <div className="mt-4 h-px w-24 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
       </motion.div>
@@ -80,14 +80,14 @@ export function Education() {
       <motion.div
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        initial={{ opacity: 0, scale: 0.82, filter: 'blur(16px)', y: 50 }}
-        whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)', y: 0 }}
+        initial={{ opacity: 0, scale: 0.9, filter: 'blur(24px)' }}
+        whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
         viewport={{ once: true, margin: '-100px' }}
-        transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
         whileHover={{
           scale: 1.01,
-          borderColor: 'rgba(125, 211, 252, 0.35)',
-          boxShadow: '0 0 35px rgba(125, 211, 252, 0.06)',
+          borderColor: 'rgba(255, 105, 180, 0.35)',
+          boxShadow: '0 0 35px rgba(255, 105, 180, 0.06)',
           transition: { duration: 0.3, ease: 'easeOut' }
         }}
         className="relative rounded-3xl border border-white/10 p-8 md:p-12 overflow-hidden max-w-5xl mx-auto"
@@ -99,7 +99,7 @@ export function Education() {
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10">
           <div className="flex flex-col md:flex-row items-center md:items-start gap-8 text-center md:text-left">
             {/* SRM Logo */}
-            <div className="relative w-20 h-20 md:w-24 md:h-24 rounded-2xl overflow-hidden border border-white/10 shrink-0 bg-black flex items-center justify-center p-2">
+            <div className="relative w-20 h-20 md:w-24 md:h-24 rounded-2xl overflow-hidden border border-[#FF69B4]/20 shrink-0 bg-black flex items-center justify-center p-2">
               <img
                 src="/srm_logo.png?v=2"
                 alt="SRM IST Logo"
@@ -123,18 +123,46 @@ export function Education() {
             </div>
           </div>
 
-          {/* CGPA counter */}
           <div className="flex flex-col items-center lg:items-end gap-2 shrink-0 border-t border-white/5 lg:border-t-0 pt-6 lg:pt-0">
-            <span className="text-xs md:text-sm font-mono tracking-[0.35em] text-white/40 uppercase">CGPA</span>
+            <span className="text-xs md:text-sm font-mono tracking-[0.35em] text-[#FF69B4]/70 uppercase">CGPA</span>
             <div className="flex items-baseline gap-2">
-              <span className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tighter">
-                <LoopCGPACounter target={9.76} />
+              <span className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tighter drop-shadow-[0_0_8px_rgba(255,105,180,0.5)]">
+                <LoopCGPACounter target={9.46} />
               </span>
-              <span className="text-xl md:text-2xl font-mono text-white/25">/ 10.00</span>
+              <span className="text-xl md:text-2xl font-mono text-[#FFE4E1]/40">/ 10.00</span>
             </div>
           </div>
         </div>
       </motion.div>
+
+      {/* Class XII & X */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mt-8">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9, filter: 'blur(24px)' }}
+          whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+          viewport={{ once: true, margin: '-100px' }}
+          transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+          className="relative rounded-3xl border border-white/10 p-8 overflow-hidden"
+          style={{ background: 'rgba(255,255,255,0.015)', backdropFilter: 'blur(20px)' }}
+        >
+          <p className="text-xs font-mono tracking-[0.3em] text-[#FF69B4]/80 uppercase mb-2">2023</p>
+          <h3 className="text-xl md:text-2xl font-medium text-[#FFE4E1]/90 mb-1">Class XII (CBSE)</h3>
+          <p className="text-3xl font-bold text-white drop-shadow-[0_0_5px_rgba(255,105,180,0.4)] mt-4">84%</p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9, filter: 'blur(24px)' }}
+          whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+          viewport={{ once: true, margin: '-100px' }}
+          transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
+          className="relative rounded-3xl border border-white/10 p-8 overflow-hidden"
+          style={{ background: 'rgba(255,255,255,0.015)', backdropFilter: 'blur(20px)' }}
+        >
+          <p className="text-xs font-mono tracking-[0.3em] text-[#FF69B4]/80 uppercase mb-2">2021</p>
+          <h3 className="text-xl md:text-2xl font-medium text-[#FFE4E1]/90 mb-1">Class X (CBSE)</h3>
+          <p className="text-3xl font-bold text-white drop-shadow-[0_0_5px_rgba(255,105,180,0.4)] mt-4">95%</p>
+        </motion.div>
+      </div>
     </section>
   )
 }

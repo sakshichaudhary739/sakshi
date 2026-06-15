@@ -4,31 +4,30 @@ import { motion } from 'framer-motion'
 
 const LANGUAGES = [
   { name: 'English', proficiency: 'Professional Proficiency', code: 'EN' },
-  { name: 'Urdu', proficiency: 'Native Speaker', code: 'UR' },
   { name: 'Hindi', proficiency: 'Native Speaker', code: 'HI' },
-  { name: 'German', proficiency: 'Basic Proficiency', code: 'DE' }
+  { name: 'German', proficiency: 'A1 Level Proficiency', code: 'DE' }
 ]
 
 function LanguageCard({ lang, idx }: { lang: any; idx: number }) {
   const cardRef = useRef<HTMLDivElement>(null)
   const [isHovered, setIsHovered] = useState(false)
 
-  const stopColor = isHovered ? 'rgba(125, 211, 252, 0.9)' : 'rgba(255, 255, 255, 0.35)'
-  const stopColorEdge = isHovered ? 'rgba(125, 211, 252, 0)' : 'rgba(255, 255, 255, 0)'
+  const stopColor = isHovered ? 'rgba(255, 105, 180, 0.9)' : 'rgba(255, 255, 255, 0.35)'
+  const stopColorEdge = isHovered ? 'rgba(255, 105, 180, 0)' : 'rgba(255, 255, 255, 0)'
 
   return (
     <motion.div
       ref={cardRef}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      initial={{ opacity: 0, y: 20, scale: 0.95 }}
-      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      initial={{ opacity: 0, scale: 0.9, filter: 'blur(24px)' }}
+      whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: idx * 0.08 }}
+      transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
       whileHover={{
         scale: 1.03,
-        borderColor: 'rgba(125, 211, 252, 0.35)',
-        boxShadow: '0 0 25px rgba(125, 211, 252, 0.04)',
+        borderColor: 'rgba(255, 105, 180, 0.35)',
+        boxShadow: '0 0 25px rgba(255, 105, 180, 0.04)',
         transition: { duration: 0.2 }
       }}
       className="relative flex items-center gap-4 rounded-2xl border border-white/10 p-4 md:p-6 overflow-hidden bg-white/[0.02] backdrop-blur-[24px] cursor-default"
@@ -63,7 +62,7 @@ function LanguageCard({ lang, idx }: { lang: any; idx: number }) {
       </svg>
 
       {/* Language Indicator */}
-      <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center font-mono text-base md:text-lg text-[#7DD3FC] font-semibold shrink-0">
+      <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-[#FF69B4]/10 border border-[#FF69B4]/20 flex items-center justify-center font-mono text-base md:text-lg text-[#FF69B4] font-semibold shrink-0">
         {lang.code}
       </div>
 
@@ -84,10 +83,10 @@ export function Languages() {
     <section className="w-full py-20">
       {/* Section heading */}
       <motion.div
-        initial={{ opacity: 0, scale: 0.9, filter: 'blur(6px)' }}
+        initial={{ opacity: 0, scale: 0.9, filter: 'blur(24px)' }}
         whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
         viewport={{ once: true, margin: '-100px' }}
-        transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
         className="mb-12 flex flex-col items-center text-center"
       >
         <h2
@@ -98,7 +97,7 @@ export function Languages() {
             animation: 'shimmer 8s linear infinite',
           }}
         >
-          Languages
+          Voices & Tongues
         </h2>
         <div className="mt-4 h-px w-20 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
       </motion.div>

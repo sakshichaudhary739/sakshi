@@ -7,29 +7,29 @@ export function Contact() {
   const cardRef = useRef<HTMLDivElement>(null)
   const [isCardHovered, setIsCardHovered] = useState(false)
 
-  const stopColor = isCardHovered ? 'rgba(125, 211, 252, 0.9)' : 'rgba(255, 255, 255, 0.35)'
-  const stopColorEdge = isCardHovered ? 'rgba(125, 211, 252, 0)' : 'rgba(255, 255, 255, 0)'
+  const stopColor = isCardHovered ? 'rgba(255, 105, 180, 0.9)' : 'rgba(255, 255, 255, 0.35)'
+  const stopColorEdge = isCardHovered ? 'rgba(255, 105, 180, 0)' : 'rgba(255, 255, 255, 0)'
 
   return (
     <section className="w-full py-28 relative flex flex-col items-center">
       {/* Small uppercase category label */}
       <motion.p
-        initial={{ opacity: 0, y: 15 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, scale: 0.9, filter: 'blur(24px)' }}
+        whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
         
         viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-        className="text-sm md:text-base font-mono tracking-[0.4em] text-[#7DD3FC] uppercase mb-4"
+        transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+        className="text-sm md:text-base font-mono tracking-[0.4em] text-[#FF69B4] uppercase mb-4 drop-shadow-[0_0_8px_rgba(255,105,180,0.6)]"
       >
         OPEN FOR COLLABORATION
       </motion.p>
 
       {/* Main Heading */}
       <motion.h2
-        initial={{ opacity: 0, scale: 0.95, filter: 'blur(4px)' }}
+        initial={{ opacity: 0, scale: 0.9, filter: 'blur(24px)' }}
         whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
         viewport={{ once: true }}
-        transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
         className="text-5xl md:text-6xl lg:text-7xl font-medium tracking-tighter text-transparent bg-clip-text text-center px-4 max-w-4xl"
         style={{
           backgroundImage: 'linear-gradient(to right, #FFFFFF 0%, rgba(255,255,255,0.5) 50%, #FFFFFF 100%)',
@@ -37,18 +37,18 @@ export function Contact() {
           animation: 'shimmer 8s linear infinite',
         }}
       >
-        Engineering Intelligence, Transforming Tomorrow
+        Dreaming Up Digital Utopias
       </motion.h2>
 
       {/* Description text */}
       <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, scale: 0.9, filter: 'blur(24px)' }}
+        whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
         viewport={{ once: true }}
-        transition={{ duration: 1.0, delay: 0.1 }}
+        transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
         className="text-lg md:text-xl text-white/55 font-light text-center max-w-2xl mt-6 px-6 leading-relaxed"
       >
-        I enjoy connecting with ambitious individuals, innovative teams, and forward-thinking organizations. Whether you have a vision to build, a challenge to solve, an exciting opportunity to discuss, or simply want to say hello, I'd be delighted to hear from you.
+        I’m always thrilled to cross paths with visionary minds and trailblazing teams. Whether we’re weaving complex algorithms, sketching out a moonshot idea, or just sharing a virtual cup of coffee, my inbox is always open for inspiration.
       </motion.p>
 
       {/* Glassmorphic Action Card */}
@@ -56,14 +56,14 @@ export function Contact() {
         ref={cardRef}
         onMouseEnter={() => setIsCardHovered(true)}
         onMouseLeave={() => setIsCardHovered(false)}
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, scale: 0.9, filter: 'blur(24px)' }}
+        whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
         viewport={{ once: true }}
-        transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+        transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
         whileHover={{
           scale: 1.015,
-          borderColor: 'rgba(125, 211, 252, 0.35)',
-          boxShadow: '0 0 35px rgba(125, 211, 252, 0.06)',
+          borderColor: 'rgba(255, 105, 180, 0.35)',
+          boxShadow: '0 0 35px rgba(255, 105, 180, 0.06)',
           transition: { duration: 0.3, ease: 'easeOut' }
         }}
         className="relative rounded-3xl border border-white/10 p-8 md:p-12 mt-12 max-w-2xl w-full mx-auto overflow-hidden bg-white/[0.01] backdrop-blur-[24px] text-center"
@@ -98,29 +98,29 @@ export function Contact() {
         </svg>
 
         <h3 className="text-3xl md:text-4xl font-medium text-white/90 tracking-tight mb-3">
-          Ready to Make an Impact?
+          Ready to Ignite Innovation?
         </h3>
         <p className="text-base md:text-lg text-white/50 font-light mb-8 max-w-md mx-auto leading-relaxed">
-          Let's transform bold ideas into scalable, intelligent, and meaningful solutions that create real-world value.
+          Let's channel raw creativity into elegant, intelligent solutions that leave a lasting sparkle.
         </p>
 
         {/* Action Button */}
         <motion.a
-          href="https://mail.google.com/mail/?view=cm&fs=1&to=arhamrasheed32@gmail.com"
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=sakshi.chaudhary739@gmail.com"
           target="_blank"
           rel="noreferrer"
           className="inline-flex items-center gap-2 bg-white text-black font-semibold text-base md:text-lg px-8 py-3.5 rounded-full hover:bg-neutral-200 transition-colors duration-300 pointer-events-auto shadow-lg"
           whileHover={{ scale: 1.04 }}
           whileTap={{ scale: 0.98 }}
         >
-          Get in Touch
+          Say Hello ✨
           <ArrowRight className="w-4.5 h-4.5" />
         </motion.a>
       </motion.div>
 
       {/* Connect & Follow Section */}
       <div className="mt-20 flex flex-col items-center gap-6 w-full max-w-4xl px-4">
-        <p className="text-sm md:text-base font-mono tracking-[0.3em] text-[#7DD3FC]/80 uppercase">
+        <p className="text-sm md:text-base font-mono tracking-[0.3em] text-[#FF69B4]/80 uppercase drop-shadow-[0_0_8px_rgba(255,105,180,0.4)]">
           CONNECT & FOLLOW
         </p>
 
@@ -128,35 +128,41 @@ export function Contact() {
           {[
             {
               label: 'Email',
-              value: 'arhamrasheed32@gmail.com',
-              link: 'https://mail.google.com/mail/?view=cm&fs=1&to=arhamrasheed32@gmail.com',
+              value: 'sakshi.chaudhary739@gmail.com',
+              link: 'https://mail.google.com/mail/?view=cm&fs=1&to=sakshi.chaudhary739@gmail.com',
               icon: (
-                <svg className="w-6 h-6 text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                  <rect width="20" height="16" x="2" y="4" rx="2" />
+                <svg className="w-8 h-8 text-black drop-shadow-[0_2px_4px_rgba(255,105,180,0.3)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  {/* Cute Envelope with a Heart Seal */}
+                  <rect width="20" height="16" x="2" y="4" rx="3" />
                   <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                  <path d="M12 16.5c-1.5-1.5-2.5-2.5-2.5-3.5 0-1 1-1.5 1.5-1.5s1 1.5 1 1.5 0.5-1.5 1.5-1.5c.5 0 1.5.5 1.5 1.5 0 1-1 2-2.5 3.5z" fill="#FF1493" stroke="none" />
                 </svg>
               )
             },
             {
               label: 'GitHub',
-              value: 'github.com/arhamrasheed32',
-              link: 'https://github.com/arhamrasheed32',
+              value: 'github.com/sakshichaudhary739',
+              link: 'https://github.com/sakshichaudhary739',
               icon: (
-                <svg className="w-6 h-6 text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
-                  <path d="M9 18c-4.51 2-5-2-7-2" />
+                <svg className="w-8 h-8 text-black drop-shadow-[0_2px_4px_rgba(255,105,180,0.3)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  {/* Cute Fox/Cat Face */}
+                  <path d="M12 5c.67 0 1.35.09 2 .26 1.78-2 5.03-2.84 6.42-2.26 1.4.58-.42 7 .58 10a11.95 11.95 0 0 1-5.14 9.77H8.14A11.95 11.95 0 0 1 3 13c1-3-.82-9.42.58-10 1.4-.58 4.64.26 6.42 2.26C10.65 5.09 11.33 5 12 5z" />
+                  <circle cx="9" cy="13" r="1.5" fill="currentColor" />
+                  <circle cx="15" cy="13" r="1.5" fill="currentColor" />
+                  <path d="M12 16v1" />
                 </svg>
               )
             },
             {
               label: 'LinkedIn',
-              value: 'linkedin.com/in/arham-rasheed-10b5513b6',
-              link: 'https://linkedin.com/in/arham-rasheed-10b5513b6',
+              value: 'linkedin.com/in/sakshi-1a4064289',
+              link: 'https://www.linkedin.com/in/sakshi-1a4064289/',
               icon: (
-                <svg className="w-6 h-6 text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                  <rect width="4" height="12" x="2" y="9" rx="1" />
-                  <circle cx="4" cy="4" r="2" />
+                <svg className="w-8 h-8 text-black drop-shadow-[0_2px_4px_rgba(255,105,180,0.3)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  {/* Cute Badge for LinkedIn */}
+                  <rect x="2" y="2" width="20" height="20" rx="8" />
+                  <text x="12" y="16.5" fontSize="13" fontWeight="900" textAnchor="middle" fill="currentColor" stroke="none" fontFamily="sans-serif">in</text>
+                  <circle cx="19" cy="5" r="1.5" fill="#FF1493" stroke="none" />
                 </svg>
               )
             }
@@ -173,7 +179,7 @@ export function Contact() {
                 {item.icon}
               </motion.a>
               <div className="flex flex-col items-center">
-                <span className="text-xs font-mono tracking-widest text-[#7DD3FC]/80 uppercase">{item.label}</span>
+                <span className="text-xs font-mono tracking-widest text-[#FF69B4]/80 uppercase">{item.label}</span>
                 <a
                   href={item.link}
                   target="_blank"
@@ -189,24 +195,24 @@ export function Contact() {
 
         {/* Closing phrase */}
         <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, scale: 0.9, filter: 'blur(24px)' }}
+          whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
           viewport={{ once: true }}
-          transition={{ duration: 1.2, delay: 0.3 }}
+          transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
           className="text-xl md:text-2xl font-light tracking-widest text-white/60 mt-4 text-center italic"
         >
-          Let's build something extraordinary together.
+          Let's craft the future with a touch of magic.
         </motion.p>
       </div>
 
       {/* Bottom Footer Border Separator */}
       <div className="w-full border-t border-white/5 mt-24 pt-8 px-8 flex flex-col md:flex-row items-center justify-between gap-6 max-w-5xl mx-auto">
         <p className="text-sm md:text-base text-white/35 font-light">
-          © 2026 Arham Rasheed. All rights reserved.
+          © 2026 Sakshi. All rights reserved.
         </p>
 
         <div className="flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+          <span className="w-2 h-2 rounded-full bg-[#FF1493] shadow-[0_0_8px_rgba(255,20,147,0.8)] animate-pulse" />
           <span className="text-sm md:text-base text-white/50 font-light">Available for opportunities</span>
         </div>
 

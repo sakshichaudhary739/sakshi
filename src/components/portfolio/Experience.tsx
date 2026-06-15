@@ -26,14 +26,14 @@ const ROLES = [
     ]
   },
   {
-    company: 'SOCH Beyond The Imagination',
+    company: 'Asha Lata Viklang Kendra',
     role: 'NGO Volunteer',
     period: 'June 2025',
-    location: 'Aligarh, India',
-    logoUrl: '/SOCH_logo',
+    location: 'Bokaro, India',
+    logoUrl: '/AshaLata_logo',
     bullets: [
       'Participated in grassroots educational and social initiatives.',
-      'Conducted AI awareness sessions, educating students on emerging technologies, career opportunities, and real-world applications of AI.',
+      'Conducted AI awareness sessions, educating students on AI technologies and real-world applications.',
     ]
   }
 ]
@@ -42,8 +42,8 @@ function ExperienceCard({ roleInfo, idx }: { roleInfo: any; idx: number }) {
   const cardRef = useRef<HTMLDivElement>(null)
   const [isHovered, setIsHovered] = useState(false)
 
-  const stopColor = isHovered ? 'rgba(125, 211, 252, 0.9)' : 'rgba(255, 255, 255, 0.35)'
-  const stopColorEdge = isHovered ? 'rgba(125, 211, 252, 0)' : 'rgba(255, 255, 255, 0)'
+  const stopColor = isHovered ? 'rgba(255, 105, 180, 0.9)' : 'rgba(255, 255, 255, 0.35)'
+  const stopColorEdge = isHovered ? 'rgba(255, 105, 180, 0)' : 'rgba(255, 255, 255, 0)'
 
   return (
     <div className="relative flex gap-8 md:gap-12 pl-4 md:pl-8">
@@ -52,10 +52,10 @@ function ExperienceCard({ roleInfo, idx }: { roleInfo: any; idx: number }) {
         <motion.div
           animate={{
             scale: isHovered ? 1.3 : 1,
-            backgroundColor: isHovered ? '#7DD3FC' : 'rgba(255, 255, 255, 0.2)',
-            boxShadow: isHovered ? '0 0 12px #7DD3FC' : 'none'
+            backgroundColor: isHovered ? '#FF69B4' : 'rgba(255, 255, 255, 0.2)',
+            boxShadow: isHovered ? '0 0 12px #FF69B4' : 'none'
           }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="w-4 h-4 rounded-full border-2 border-[#020305] bg-white/20"
         />
       </div>
@@ -65,14 +65,14 @@ function ExperienceCard({ roleInfo, idx }: { roleInfo: any; idx: number }) {
         ref={cardRef}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        initial={{ opacity: 0, scale: 0.92, filter: 'blur(10px)', x: 40 }}
-        whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)', x: 0 }}
+        initial={{ opacity: 0, scale: 0.9, filter: 'blur(24px)' }}
+        whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
         viewport={{ once: true, margin: '-100px' }}
-        transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: idx * 0.15 }}
+        transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
         whileHover={{
           scale: 1.01,
-          borderColor: 'rgba(125, 211, 252, 0.35)',
-          boxShadow: '0 0 35px rgba(125, 211, 252, 0.06)',
+          borderColor: 'rgba(255, 105, 180, 0.35)',
+          boxShadow: '0 0 35px rgba(255, 105, 180, 0.06)',
           transition: { duration: 0.3, ease: 'easeOut' }
         }}
         className="relative flex-1 rounded-3xl border border-white/10 p-6 md:p-10 overflow-hidden transition-colors duration-300"
@@ -111,7 +111,7 @@ function ExperienceCard({ roleInfo, idx }: { roleInfo: any; idx: number }) {
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-white/5 pb-6">
           <div className="flex flex-col md:flex-row items-center md:items-start gap-6 text-center md:text-left">
             {/* Logo Container */}
-            <div className="relative w-16 h-16 rounded-2xl overflow-hidden border border-white/10 shrink-0 bg-black flex items-center justify-center p-2">
+            <div className="relative w-16 h-16 rounded-2xl overflow-hidden border border-[#FF69B4]/20 shrink-0 bg-black flex items-center justify-center p-2">
               <img
                 src={roleInfo.logoUrl}
                 alt={`${roleInfo.company} Logo`}
@@ -122,7 +122,7 @@ function ExperienceCard({ roleInfo, idx }: { roleInfo: any; idx: number }) {
               <h3 className="text-2xl md:text-3xl font-medium text-white/90 leading-tight tracking-tight">
                 {roleInfo.role}
               </h3>
-              <p className="text-sm font-mono tracking-widest text-[#7DD3FC]/80 uppercase">
+              <p className="text-sm font-mono tracking-widest text-[#FF69B4]/80 uppercase drop-shadow-[0_0_8px_rgba(255,105,180,0.6)]">
                 {roleInfo.company}
               </p>
             </div>
@@ -152,10 +152,10 @@ export function Experience() {
     <section className="w-full py-20">
       {/* Section heading — Zoom in & blur reveal */}
       <motion.div
-        initial={{ opacity: 0, scale: 0.9, filter: 'blur(6px)' }}
+        initial={{ opacity: 0, scale: 0.9, filter: 'blur(24px)' }}
         whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
         viewport={{ once: true, margin: '-100px' }}
-        transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
         className="mb-20 flex flex-col items-center text-center"
       >
         <h2
@@ -166,7 +166,7 @@ export function Experience() {
             animation: 'shimmer 8s linear infinite',
           }}
         >
-          Work Experience
+          Professional Milestones
         </h2>
         <div className="mt-4 h-px w-24 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
       </motion.div>

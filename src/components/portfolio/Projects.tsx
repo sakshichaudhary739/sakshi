@@ -4,43 +4,35 @@ import { motion } from 'framer-motion'
 
 const PROJECTS = [
   {
-    title: 'Optimizing Data Transmission Latency in Cloud–Edge–Fog Architecture for Metaverse Applications',
-    category: 'Research & Distributed Systems',
+    title: 'Veritas AI – Fake News Detector',
+    category: 'AI & Full-Stack Web App',
     bullets: [
-      'Researched Cloud–Edge–Fog architectures to minimize latency and improve real-time data processing for Metaverse environments.',
-      'Analyzed distributed computing and resource management strategies to enhance scalability, responsiveness, and user experience.'
+      'Designed and developed an AI-powered full-stack web application for fake news detection, enabling analysis of news articles, URLs, and uploaded documents with credibility scoring, bias detection, emotion analysis, and AI-generated summaries.',
+      'Leveraged TypeScript, React.js, Next.js, Tailwind CSS, Node.js, Google Gemini API, Git/GitHub, and Vercel to build a scalable, responsive, and production-ready platform with secure API integration.'
     ]
   },
   {
-    title: 'AWS Organizational Unit & Control Tower Automation with DevOps Portal',
-    category: 'DevOps & Cloud Infrastructure',
+    title: 'SRM Findr',
+    category: 'Full-Stack Web App',
     bullets: [
-      'Automated AWS organizational setup and governance using Terraform, Ansible, and AWS Control Tower.',
-      'Developed a full-stack DevOps portal with CI/CD automation, deployment tracking, and observability using GitHub Actions, Prometheus, and Grafana.'
-    ]
-  },
-  {
-    title: 'Customer Relationship Management (CRM) Dashboard',
-    category: 'Machine Learning & DevOps',
-    bullets: [
-      'Built a CRM analytics platform for customer segmentation, transaction analysis, and value prediction.',
-      'Implemented machine learning lifecycle management with MLflow and automated deployment pipelines using Jenkins.'
+      'Designed and developed a full-stack web application that enables students to report, search, and recover lost-and-found items within the university campus.',
+      'Leveraged Next.js, React, Supabase, PostgreSQL, Tailwind CSS, and Framer Motion to implement secure authentication, real-time data management, and an enhanced user experience.'
     ]
   },
   {
     title: 'Advanced Stock Prediction with Sentiment Analysis',
     category: 'Financial AI & Machine Learning',
     bullets: [
-      'Developed a stock forecasting platform combining machine learning models with real-time market data analysis.',
-      'Improved prediction performance through sentiment analysis of financial news and interactive visualization dashboards.'
+      'Developed a stock forecasting platform combining machine learning models with real-time market data analysis to predict stock price movements.',
+      'Enhanced prediction accuracy through sentiment analysis of financial news and built interactive dashboards for data visualization and decision support.'
     ]
   },
   {
-    title: 'Smart Parking Management System',
-    category: 'Full-Stack & Databases',
+    title: 'Optimizing Data Transmission Latency in Cloud–Edge–Fog Architecture for Metaverse Applications',
+    category: 'Research & Distributed Systems',
     bullets: [
-      'Designed and developed a web-based parking management system for slot allocation and booking operations.',
-      'Created a relational database architecture for efficient transaction handling and real-time parking availability tracking.'
+      'Researched Cloud–Edge–Fog architectures to minimize network latency and improve real-time data processing for Metaverse environments.',
+      'Analyzed distributed computing and resource management strategies to enhance scalability, responsiveness, and overall user experience.'
     ]
   }
 ]
@@ -49,22 +41,22 @@ function ProjectCard({ project, idx }: { project: any; idx: number }) {
   const cardRef = useRef<HTMLDivElement>(null)
   const [isHovered, setIsHovered] = useState(false)
 
-  const stopColor = isHovered ? 'rgba(125, 211, 252, 0.9)' : 'rgba(255, 255, 255, 0.35)'
-  const stopColorEdge = isHovered ? 'rgba(125, 211, 252, 0)' : 'rgba(255, 255, 255, 0)'
+  const stopColor = isHovered ? 'rgba(255, 105, 180, 0.9)' : 'rgba(255, 255, 255, 0.35)'
+  const stopColorEdge = isHovered ? 'rgba(255, 105, 180, 0)' : 'rgba(255, 255, 255, 0)'
 
   return (
     <motion.div
       ref={cardRef}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      initial={{ opacity: 0, y: 40, scale: 0.95 }}
-      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      initial={{ opacity: 0, scale: 0.9, filter: 'blur(24px)' }}
+      whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
       viewport={{ once: true, margin: '-60px' }}
-      transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1], delay: idx * 0.1 }}
+      transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
       whileHover={{
         scale: 1.015,
-        borderColor: 'rgba(125, 211, 252, 0.35)',
-        boxShadow: '0 0 35px rgba(125, 211, 252, 0.06)',
+        borderColor: 'rgba(255, 105, 180, 0.35)',
+        boxShadow: '0 0 35px rgba(255, 105, 180, 0.06)',
         transition: { duration: 0.3, ease: 'easeOut' }
       }}
       className="relative rounded-3xl border border-white/10 p-6 md:p-8 overflow-hidden transition-colors duration-300 flex flex-col justify-between h-full"
@@ -100,7 +92,7 @@ function ProjectCard({ project, idx }: { project: any; idx: number }) {
       </svg>
 
       <div>
-        <span className="text-xs font-mono tracking-widest text-[#7DD3FC]/80 uppercase block mb-3">
+        <span className="text-xs font-mono tracking-widest text-[#FF69B4]/80 uppercase block mb-3 drop-shadow-[0_0_8px_rgba(255,105,180,0.6)]">
           {project.category}
         </span>
         <h3 className="text-xl md:text-2xl font-medium text-white/95 leading-snug tracking-tight mb-4 text-left">
@@ -124,10 +116,10 @@ export function Projects() {
     <section className="w-full py-20">
       {/* Section heading */}
       <motion.div
-        initial={{ opacity: 0, scale: 0.9, filter: 'blur(6px)' }}
+        initial={{ opacity: 0, scale: 0.9, filter: 'blur(24px)' }}
         whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
         viewport={{ once: true, margin: '-100px' }}
-        transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
         className="mb-16 flex flex-col items-center text-center"
       >
         <h2
@@ -138,7 +130,7 @@ export function Projects() {
             animation: 'shimmer 8s linear infinite',
           }}
         >
-          Key Projects
+          Innovations & Creations
         </h2>
         <div className="mt-4 h-px w-24 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
       </motion.div>

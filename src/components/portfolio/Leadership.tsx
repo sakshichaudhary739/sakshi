@@ -4,16 +4,20 @@ import { motion } from 'framer-motion'
 
 const ROLES = [
   {
-    role: 'Technical Team Lead',
-    description: 'Led cross-functional project teams, coordinated development activities, and drove successful project execution across academic and innovation initiatives.'
+    role: 'Cultural Secretary',
+    description: 'Organized and coordinated cultural events, student engagement programs, and campus activities.'
   },
   {
-    role: 'Head Boy',
-    description: 'Represented the student body, managed institutional events, coordinated with faculty and administration, and led student governance initiatives.'
+    role: 'State-Level Basketball Player',
+    description: 'Represented the institution in state-level basketball tournaments, demonstrating teamwork and leadership.'
   },
   {
-    role: 'Academic & Event Representative',
-    description: 'Facilitated communication between students and faculty, organized academic activities, and supported the execution of technical and institutional events.'
+    role: 'National-Level Athletics Participant',
+    description: 'Competed in national-level athletics events, showcasing discipline, perseverance, and competitive excellence.'
+  },
+  {
+    role: 'Student Leader',
+    description: 'Led technical projects and actively participated in hackathons, fostering innovation and collaborative problem-solving.'
   }
 ]
 
@@ -21,22 +25,22 @@ function LeadershipCard({ item, idx }: { item: any; idx: number }) {
   const cardRef = useRef<HTMLDivElement>(null)
   const [isHovered, setIsHovered] = useState(false)
 
-  const stopColor = isHovered ? 'rgba(125, 211, 252, 0.9)' : 'rgba(255, 255, 255, 0.35)'
-  const stopColorEdge = isHovered ? 'rgba(125, 211, 252, 0)' : 'rgba(255, 255, 255, 0)'
+  const stopColor = isHovered ? 'rgba(255, 105, 180, 0.9)' : 'rgba(255, 255, 255, 0.35)'
+  const stopColorEdge = isHovered ? 'rgba(255, 105, 180, 0)' : 'rgba(255, 255, 255, 0)'
 
   return (
     <motion.div
       ref={cardRef}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      initial={{ opacity: 0, y: 30, scale: 0.96 }}
-      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      initial={{ opacity: 0, scale: 0.9, filter: 'blur(24px)' }}
+      whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
       viewport={{ once: true, margin: '-60px' }}
-      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: idx * 0.1 }}
+      transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
       whileHover={{
         scale: 1.02,
-        borderColor: 'rgba(125, 211, 252, 0.35)',
-        boxShadow: '0 0 35px rgba(125, 211, 252, 0.06)',
+        borderColor: 'rgba(255, 105, 180, 0.35)',
+        boxShadow: '0 0 35px rgba(255, 105, 180, 0.06)',
         transition: { duration: 0.3, ease: 'easeOut' }
       }}
       className="relative rounded-3xl border border-white/10 p-6 md:p-8 overflow-hidden transition-colors duration-300 flex flex-col justify-between h-full bg-white/[0.02] backdrop-blur-[24px]"
@@ -71,7 +75,7 @@ function LeadershipCard({ item, idx }: { item: any; idx: number }) {
       </svg>
 
       <div>
-        <h3 className="text-2xl md:text-3xl font-medium text-white/95 leading-snug tracking-tight mb-4 text-left border-b border-white/5 pb-3">
+        <h3 className="text-2xl md:text-3xl font-medium text-white/95 leading-snug tracking-tight mb-4 text-left border-b border-white/5 pb-3 drop-shadow-[0_0_8px_rgba(255,105,180,0.4)]">
           {item.role}
         </h3>
         <p className="text-base md:text-lg text-white/60 font-light leading-relaxed text-left">
@@ -87,10 +91,10 @@ export function Leadership() {
     <section className="w-full py-20">
       {/* Section heading */}
       <motion.div
-        initial={{ opacity: 0, scale: 0.9, filter: 'blur(6px)' }}
+        initial={{ opacity: 0, scale: 0.9, filter: 'blur(24px)' }}
         whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
         viewport={{ once: true, margin: '-100px' }}
-        transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
         className="mb-16 flex flex-col items-center text-center"
       >
         <h2
@@ -101,7 +105,7 @@ export function Leadership() {
             animation: 'shimmer 8s linear infinite',
           }}
         >
-          Leadership & Extracurriculars
+          Leading by Example
         </h2>
         <div className="mt-4 h-px w-24 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
       </motion.div>

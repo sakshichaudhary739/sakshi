@@ -2,10 +2,10 @@
 import { motion } from 'framer-motion'
 
 const LINES = [
-  { text: '3rd-Year Computer Science Engineering Student', delay: 0.3 },
-  { text: 'Artificial Intelligence  ·  Machine Learning  ·  Cloud Computing  ·  Distributed Systems', delay: 0.45 },
-  { text: 'Building scalable full-stack, DevOps, and data-driven applications.', delay: 0.6 },
-  { text: 'Focused on performance optimization, automation, and next-generation computing.', delay: 0.75 },
+  { text: 'Undergraduate Computer Science Engineering student', delay: 0.3 },
+  { text: 'Data Science · Artificial Intelligence · Machine Learning · Cloud Computing · Natural Language Processing', delay: 0.45 },
+  { text: 'Passionate about developing intelligent, scalable, and data-driven solutions while leveraging emerging technologies to solve complex real-world challenges.', delay: 0.6 },
+  { text: 'Strong interest in software engineering, full-stack development, and building impactful technology products.', delay: 0.75 },
 ]
 
 const fadeUp = {
@@ -60,8 +60,8 @@ export function ProfessionalSummary() {
               i === 0
                 ? 'text-xl md:text-2xl font-light text-white/80 tracking-tight'
                 : i === 1
-                ? 'text-sm font-mono tracking-widest text-[#7DD3FC]/70 uppercase'
-                : 'text-base md:text-lg text-white/40 font-light leading-relaxed'
+                ? 'text-sm font-mono tracking-widest text-[#FF69B4]/90 uppercase drop-shadow-[0_0_8px_rgba(255,105,180,0.6)]'
+                : 'text-base md:text-lg text-[#FFE4E1]/80 font-light leading-relaxed'
             }
           >
             {line.text}

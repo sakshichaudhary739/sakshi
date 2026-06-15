@@ -1,23 +1,15 @@
 @import "tailwindcss";
 
-@font-face {
-  font-family: 'DuneRise';
-  src: url('/fonts/dune-rise.otf') format('opentype'),
-       url('/fonts/dune-rise.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
+
 
 @theme {
-  --color-luxury-bg: #020305;
-  --color-luxury-surface: #0A0D12;
-  --color-luxury-glass: rgba(255, 255, 255, 0.05);
-  --color-luxury-accent: #7DD3FC;
-  --color-luxury-secondary: #A78BFA;
-  --color-luxury-text: #F8FAFC;
-  --font-sans: 'Inter', sans-serif;
-  --font-dune: 'DuneRise', sans-serif;
+  --color-luxury-bg: #2A0A18;
+  --color-luxury-surface: #1E0B16;
+  --color-luxury-glass: rgba(244, 114, 182, 0.05);
+  --color-luxury-accent: #F472B6;
+  --color-luxury-secondary: #E0BFB8;
+  --color-luxury-text: #FFF0F5;
+  --font-playfair: var(--font-playfair);
 }
 
 @layer base {
@@ -27,25 +19,38 @@
   }
 
   body {
-    background-color: #020305;
-    color: #F8FAFC;
+    background-color: #000000;
+    color: #FFB6C1 !important; /* Light pink */
     font-feature-settings: "rlig" 1, "calt" 1;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
 
+  /* Force Times New Roman globally */
   * {
     cursor: none !important;
+    font-family: "Times New Roman", Times, serif !important;
+  }
+
+  /* Force all text to be shades of pink and strip white gradients */
+  h1, h2, h3, h4, h5, h6, p, span, a, li, div {
+    -webkit-text-fill-color: unset !important;
+    color: #FFB6C1 !important;
+  }
+
+  /* Different shade of pink for headings for some contrast */
+  h1, h2, h3 {
+    color: #FF1493 !important; /* Hot pink */
   }
 }
 
 @layer utilities {
   .glass-panel {
-    background-color: rgba(255, 255, 255, 0.02);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    background-color: rgba(244, 114, 182, 0.03);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(244, 114, 182, 0.1);
+    box-shadow: 0 4px 30px rgba(244, 114, 182, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
 }
 

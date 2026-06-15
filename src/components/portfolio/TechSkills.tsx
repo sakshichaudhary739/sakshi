@@ -5,19 +5,11 @@ import { motion } from 'framer-motion'
 const SKILL_CATEGORIES = [
   {
     title: 'Programming Languages',
-    items: ['Python', 'C++', 'Java', 'JavaScript', 'C'],
+    items: ['Python', 'C', 'Java', 'C++'],
   },
   {
     title: 'AI/ML & Data Science',
     items: ['TensorFlow', 'Scikit-learn', 'Pandas', 'NumPy', 'MLflow', 'Exploratory Data Analysis (EDA)', 'Data Visualization', 'Tableau'],
-  },
-  {
-    title: 'Backend Development',
-    items: ['FastAPI', 'REST APIs'],
-  },
-  {
-    title: 'Frontend Development',
-    items: ['React', 'JavaScript', 'HTML', 'CSS'],
   },
   {
     title: 'Databases',
@@ -25,11 +17,7 @@ const SKILL_CATEGORIES = [
   },
   {
     title: 'Cloud & DevOps',
-    items: ['AWS', 'GCP', 'Docker', 'Terraform', 'Ansible', 'Jenkins', 'GitHub Actions'],
-  },
-  {
-    title: 'Monitoring & Observability',
-    items: ['Prometheus', 'Grafana'],
+    items: ['AWS', 'Docker', 'Terraform', 'Ansible', 'Jenkins', 'GitHub Actions'],
   },
   {
     title: 'Computer Science Fundamentals',
@@ -38,6 +26,14 @@ const SKILL_CATEGORIES = [
   {
     title: 'Developer Tools',
     items: ['Git', 'GitHub', 'VS Code', 'Figma'],
+  },
+  {
+    title: 'Backend Development',
+    items: ['FastAPI', 'REST APIs'],
+  },
+  {
+    title: 'Frontend Development',
+    items: ['React', 'JavaScript', 'HTML', 'CSS'],
   },
 ]
 
@@ -55,8 +51,8 @@ function SkillCard({ category, idx }: { category: any; idx: number }) {
     })
   }
 
-  const stopColor = isHovered ? 'rgba(125, 211, 252, 0.9)' : 'rgba(255, 255, 255, 0.35)'
-  const stopColorEdge = isHovered ? 'rgba(125, 211, 252, 0)' : 'rgba(255, 255, 255, 0)'
+  const stopColor = isHovered ? 'rgba(255, 105, 180, 0.9)' : 'rgba(255, 255, 255, 0.35)'
+  const stopColorEdge = isHovered ? 'rgba(255, 105, 180, 0)' : 'rgba(255, 255, 255, 0)'
 
   return (
     <motion.div
@@ -64,14 +60,14 @@ function SkillCard({ category, idx }: { category: any; idx: number }) {
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      initial={{ opacity: 0, scale: 0.82, filter: 'blur(16px)', y: 50 }}
-      whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)', y: 0 }}
+      initial={{ opacity: 0, scale: 0.9, filter: 'blur(24px)' }}
+      whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
       viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: idx * 0.05 }}
+      transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
       whileHover={{
         scale: 1.015,
-        borderColor: 'rgba(125, 211, 252, 0.35)',
-        boxShadow: '0 0 35px rgba(125, 211, 252, 0.06)',
+        borderColor: 'rgba(255, 105, 180, 0.35)',
+        boxShadow: '0 0 35px rgba(255, 105, 180, 0.06)',
         transition: { duration: 0.3, ease: 'easeOut' }
       }}
       className="relative rounded-3xl border border-white/10 p-6 md:p-8 overflow-hidden flex flex-col gap-4 transition-colors duration-300"
@@ -111,7 +107,7 @@ function SkillCard({ category, idx }: { category: any; idx: number }) {
         className="absolute inset-0 pointer-events-none transition-opacity duration-300"
         style={{
           opacity: isHovered ? 1 : 0,
-          background: `radial-gradient(200px circle at ${coords.x}px ${coords.y}px, rgba(255, 255, 255, 0.07), transparent 75%)`,
+          background: `radial-gradient(200px circle at ${coords.x}px ${coords.y}px, rgba(255, 105, 180, 0.15), transparent 75%)`,
         }}
       />
 
@@ -122,19 +118,19 @@ function SkillCard({ category, idx }: { category: any; idx: number }) {
         {category.title}
       </h3>
 
-      <div className="flex flex-wrap gap-2 mt-2 relative z-10">
+      <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 mt-4 relative z-10">
         {category.items.map((item: string) => (
           <motion.span
             key={item}
             whileHover={{
               scale: 1.05,
-              backgroundColor: 'rgba(255, 255, 255, 0.08)',
-              borderColor: 'rgba(255, 255, 255, 0.35)',
-              boxShadow: '0 0 15px rgba(255, 255, 255, 0.12)',
+              backgroundColor: 'rgba(255, 105, 180, 0.2)',
+              borderColor: 'rgba(255, 105, 180, 0.5)',
+              boxShadow: '0 0 20px rgba(255, 105, 180, 0.3)',
               color: '#FFFFFF',
               transition: { duration: 0.2 }
             }}
-            className="px-3.5 py-1.5 rounded-full text-sm font-normal text-white/70 bg-white/5 border border-white/10 transition-all cursor-default"
+            className="px-4 py-2.5 rounded-lg text-sm md:text-base font-medium text-center text-[#FF69B4]/90 bg-white/5 border border-white/10 backdrop-blur-md transition-all cursor-default flex items-center justify-center min-h-[44px]"
           >
             {item}
           </motion.span>
@@ -149,10 +145,10 @@ export function TechSkills() {
     <section className="w-full py-20">
       {/* Section heading — Zoom in & blur reveal */}
       <motion.div
-        initial={{ opacity: 0, scale: 0.9, filter: 'blur(6px)' }}
+        initial={{ opacity: 0, scale: 0.9, filter: 'blur(24px)' }}
         whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
         viewport={{ once: true, margin: '-100px' }}
-        transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
         className="mb-16 flex flex-col items-center text-center"
       >
         <h2
@@ -163,7 +159,7 @@ export function TechSkills() {
             animation: 'shimmer 8s linear infinite',
           }}
         >
-          Technical Skills
+          Tools of the Trade
         </h2>
         <div className="mt-4 h-px w-24 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
       </motion.div>
