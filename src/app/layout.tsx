@@ -7,8 +7,8 @@ const inter = Inter({ subsets: ["latin"], variable: '--font-sans' });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: '--font-playfair' });
 
 export const metadata: Metadata = {
-  title: "Career OS | Executive Dashboard",
-  description: "Advanced, futuristic, premium enterprise-grade Career Operating System.",
+  title: "Sakshi Digital Resume",
+  description: "Digital Resume and Portfolio of Sakshi",
 };
 
 import { CursorEngine } from "@/engine/CursorEngine";
