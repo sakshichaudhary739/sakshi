@@ -141,7 +141,7 @@ export default function Home() {
                 animation: 'shimmer 8s linear infinite',
               }}
             >
-              Arham
+              arham
             </motion.h1>
           </div>
 
@@ -159,7 +159,7 @@ export default function Home() {
                 animation: 'shimmer 8s linear infinite',
               }}
             >
-              Rasheed
+              rasheed
             </motion.h1>
           </div>
 
